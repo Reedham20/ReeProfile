@@ -1,14 +1,15 @@
-// import logo from './logo.svg';
+import React, { Component } from 'react';
+import logo from './logo.svg';
 import './App.css';
-import SVG from './SVG';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>eedham Pujara</h1>
-        <SVG/>
-        <p>
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+        <h1>Reedham Pujara</h1>
+          <img src={logo} className="App-logo" alt="logo" />
+            <p>
           Something amazing coming Soon
         </p>
         untill then visit my 
@@ -20,9 +21,10 @@ function App() {
         >
           GitHub profile
         </a>
-      </header>
-    </div>
-  );
+        </header>
+      </div>
+    );
+  }
 }
 
 export default App;
