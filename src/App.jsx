@@ -5,13 +5,20 @@ import Works from "./components/works/Works"
 import Testimonial from './components/testimonials/Testimonial'
 import Contact from './components/contact/Contact'
 import './app.scss'
-
+import { useState } from "react";
+import Menu from "./components/menu/Menu";
+import useRightClickMenu from "./hooks/useRightClickMenu";
+import RightMenu from "./components/rightmenu/RightMenu";
 
 
 function App() {
+  const [menuOpen, setMenuOpen] = useState(false)
+  const {x,y,showMenu} = useRightClickMenu();
   return (
     <div className="app">
-      <Topbar/>
+      <RightMenu x={x} y={y} showMenu={showMenu}/>
+      <Topbar menuOpen={menuOpen} setMenuOpen= {setMenuOpen}/>
+      <Menu menuOpen={menuOpen} setMenuOpen= {setMenuOpen}/>
       <div className="sections">
         <Intro/>
         <Portfolio/>

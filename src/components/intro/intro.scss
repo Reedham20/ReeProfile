@@ -1,3 +1,42 @@
+@import "../../global.scss";
+
 .intro{
-    background-color: #0c0e0c;
+    background-color: $primarycolor;
+    display: flex;
+    .left {
+        flex: .5;
+        overflow: hidden;
+
+        .imagecontainer {
+            width: 1000px;
+            aspect-ratio: 1;
+            background-color: $tertiarycolor;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            float: right;
+            
+            img {
+                height: 80%;
+            }
+        }
+    }
+
+    .right{
+        flex: 0.5;
+        position: relative;
+        .wrapper{
+            width: 100%;
+            height: 100%;
+            padding-left: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            h1 {
+                
+            }
+        }
+    }
 }
