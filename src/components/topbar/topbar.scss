@@ -1,0 +1,190 @@
+@import "../../global.scss";
+
+.topbar{
+    height: 80px;
+    width: 100%;
+    background-color: $tertiarycolor;
+    color: $secondarycolor;
+    position: fixed;
+    top: 0px;
+    z-index: 2;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    overflow-y: hidden;
+    transition: all 0.5s ease;
+
+    .wrapper{
+        box-sizing: border-box;
+        height: 100%;
+        width: 100%;
+        padding: 1vh 5vw;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .left{
+            display: flex;
+            justify-content: center;
+            .itemcontainer {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-left: 1vw;
+                animation: color 2s ease-in-out;
+                span {
+                    padding-left: 0.3vw;
+                }
+
+                a{
+                    text-decoration: none;
+                    color: inherit;
+                }
+                a:hover {
+                    text-decoration: underline;
+                }
+            }
+            a{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            
+        }
+        .right {
+            .hamburger {
+                width: 32px;
+                height: 25px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                cursor: pointer;
+
+                span {
+                    width: 100%;
+                    height: 3px;
+                    animation: backcolor 2s ease-in-out;
+                    background-color: $secondarycolor;
+                    transform-origin: left;
+                    transition: all 1s ease;
+                    // margin: 5px;
+                }
+            }
+        }
+    }
+    &.active {
+        background-color: $tertiarycolor;
+        color: $secondarycolor;
+
+        .hamburger{
+            span {
+                &:first-child {
+                    background-color: $secondarycolor;
+                    transform: rotate(45deg);
+                }
+                &:nth-child(2) {
+                    opacity: 0;
+                }
+                &:last-child {
+                    background-color: $secondarycolor;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+}
+
+
+#logo{
+    animation: fill 4s ease forwards 0.5s;
+    path{
+    animation: line-anim 4s ease forwards;
+    }
+}
+
+#logo path:nth-child(1){
+    stroke-dasharray: 187;
+    stroke-dashoffset: 187;    
+    
+}
+#logo path:nth-child(2){
+    stroke-dasharray: 176;
+    stroke-dashoffset: 176;    
+}
+#logo path:nth-child(3){
+    stroke-dasharray: 176;
+    stroke-dashoffset: 176;    
+}
+#logo path:nth-child(4){
+    stroke-dasharray: 191;
+    stroke-dashoffset: 191;    
+}
+#logo path:nth-child(5){
+    stroke-dasharray: 162;
+    stroke-dashoffset: 162;    
+}
+#logo path:nth-child(6){
+    stroke-dasharray: 173;
+    stroke-dashoffset: 173;    
+}
+#logo path:nth-child(7){
+    stroke-dasharray: 228;
+    stroke-dashoffset: 228;    
+}
+#logo path:nth-child(8){
+    stroke-dasharray: 153;
+    stroke-dashoffset: 153;    
+}
+#logo path:nth-child(9){
+    stroke-dasharray: 143;
+    stroke-dashoffset: 143;    
+}
+#logo path:nth-child(10){
+    stroke-dasharray: 114;
+    stroke-dashoffset: 114;    
+}
+#logo path:nth-child(11){
+    stroke-dasharray: 173;
+    stroke-dashoffset: 173;    
+}
+#logo path:nth-child(12){
+    stroke-dasharray: 83;
+    stroke-dashoffset: 83;    
+}
+#logo path:nth-child(13){
+    stroke-dasharray: 173;
+    stroke-dashoffset: 173;    
+}
+
+
+@keyframes line-anim{
+    to{
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes fill {
+    from{
+        fill: transparent;
+    }
+    to{
+        fill: $secondarycolor;
+    }
+}
+
+@keyframes color {
+    from{
+        color: transparent;
+    }
+    to{
+        color: $secondarycolor;
+    }
+}
+
+@keyframes backcolor {
+    from{
+        background-color: transparent;
+    }
+    to{
+       background-color: $secondarycolor;
+    }
+}
