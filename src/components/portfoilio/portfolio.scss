@@ -1,5 +1,163 @@
 @import "../../global.scss";
 
-.portfolio{
-    background-color: #eaebea;
+.portfolio {
+  background-color: $secondarycolor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  
+  h1 {
+    position: absolute;
+    top: 2rem;
+    font-size: 60px;
+    @include mobile {
+      display: none;
+    }
+  }
+
+  .arrow {
+    height: 50px;
+    position: absolute;
+    cursor: pointer;
+
+    @include mobile {
+      display: none;
+    }
+
+    &.left {
+      left: 100px;
+      transform: rotateY(180deg);
+      animation:  arrowBlink 2s infinite;
+      animation-delay: 5s;
+    }
+
+    &.right {
+      right: 100px;
+      animation:  arrowBlink 2s infinite;
+    }
+  }
+
+  .slider {
+    height: 350px;
+    display: flex;
+    position: absolute;
+    left: 0;
+    transition: all 1s ease-out;
+
+    @include mobile {
+      height: 100vh;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .container {
+      width: 100vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .item {
+        width: 700px;
+        height: 100%;
+        background-color: $tertiarycolor;
+        color: $primarycolor;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include mobile {
+          width: 80%;
+          height: 150px;
+          margin: 15px 0;
+        }
+
+        .left {
+          flex: 5;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-position: left -50px bottom 200px;
+          background-size: 55%;
+          background-repeat: no-repeat;
+
+          .leftContainer {
+            width: 90%;
+            height: 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            
+            h2 {
+              font-size: 35px;
+              color: $secondarycolor;
+              // overflow: hidden;
+
+              @include mobile{
+                font-size: 23px;
+              }
+            }
+            p {
+              font-size: 20px;
+              @include mobile{
+                display: none;
+              }
+            }
+            span {
+              font-size: 18px;
+              font-weight: 600;
+              cursor: pointer;
+              @include mobile{
+                font-size: 15px;
+              }
+              a {
+                  color: $primarycolor;
+              }
+            }
+          }
+        }
+        .right {
+          flex: 7;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #232122;
+          transition: all ease 1s;
+          &::-webkit-scrollbar {
+            display: none;
+          }
+
+          p {
+            margin: 30px;
+            color: $secondarycolor;
+            font-size: 20px;
+            @include mobile{
+              font-size: 15px;
+          transition: all ease 1s;
+
+            }
+          }
+
+          img {
+            width: 375px;
+            transform: rotate(-10deg);
+          transition: all ease 1s;
+
+          }
+        }
+      }
+    }
+  }
+}
+@keyframes arrowBlink {
+  50% {
+    opacity: 40%;
+  }
+  100% {
+      opacity: 100%;
+  }
 }

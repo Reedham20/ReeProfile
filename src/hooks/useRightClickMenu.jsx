@@ -6,10 +6,10 @@ const useRightClickMenu = () => {
     const [showMenu, setShowMenu] = useState(false)
 
     const handleContextMenu = (e) => {
-        e.preventDefault()
+        // e.preventDefault()
         setX(e.pageX)
         setY(e.pageY)
-        setShowMenu(true)
+        // setShowMenu(true)
     }
 
     const handleClick = () => {

@@ -23,8 +23,9 @@ const RightMenu = ({x,y,showMenu}) => {
             top: y,
             left: x,
             position: "absolute",
-            opacity: showMenu ? 1: 0,
-            zIndex : 5
+            display: showMenu ? "flex": "none",
+            zIndex : 5,
+            borderRadius : 10 
         }
     }
 
